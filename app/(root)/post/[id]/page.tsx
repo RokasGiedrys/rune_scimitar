@@ -10,10 +10,51 @@ import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
 import PostCard, { PostTypeCard } from "@/components/PostCard";
+import { Metadata } from "next";
 
 const md = markdownit();
 
 export const experimental_ppr = true;
+
+// Dynamic metadata function using client.fetch
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  // Fetch post data for metadata
+  const post = await client.fetch(POST_BY_ID_QUERY, { id: params.id });
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "This post does not exist.",
+    };
+  }
+
+  return {
+    title: `${post.title} - Blog About OSRS`,
+    description: post.description,
+    openGraph: {
+      title: post.title || "",
+      description: post.description || "",
+      url: `https://runescimitar.vercel.app/post/${params.id}`,
+      images: [
+        {
+          url: post.image || "/default-og-image.jpg", // Use post image if available, otherwise default
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title || "",
+      description: post.description || "",
+      images: [post.image || "/default-twitter-image.jpg"],
+    },
+  };
+}
 
 export default async function page({
   params,
