@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ <h1>Old School RuneScape Blog</h1>
+  <p>A personal blog built with <strong>Next.js 15</strong> where I share updates, tips, and guides about the game <strong>Old School RuneScape</strong> (OSRS). This project leverages modern web technologies for a fast, responsive, and SEO-friendly experience.</p>
 
-## Getting Started
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Markdown Support:</strong> Write and edit posts easily with markdown.</li>
+    <li><strong>Image Optimisation:</strong> Sanity-powered image handling for fast load times.</li>
+    <li><strong>User Authentication:</strong> Set up with NextAuth.js for secure access.</li>
+    <li><strong>Responsive Design:</strong> Styled with Tailwind CSS for mobile-friendly layouts.</li>
+    <li><strong>Error Monitoring:</strong> Sentry integration to track errors in production.</li>
+  </ul>
 
-First, run the development server:
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Next.js 15</strong></li>
+    <li><strong>React 19</strong></li>
+    <li><strong>Sanity CMS</strong> for content management</li>
+    <li><strong>NextAuth.js</strong> for authentication</li>
+    <li><strong>Tailwind CSS</strong> for styling</li>
+    <li><strong>Sentry</strong> for error tracking</li>
+  </ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <h2>Getting Started</h2>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <h3>Prerequisites</h3>
+  <ul>
+    <li><strong>Node.js:</strong> Version 16 or higher</li>
+    <li><strong>Sanity CLI:</strong> For managing content</li>
+  </ul>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <h3>Installation</h3>
+  <ol>
+    <li><strong>Clone the repository:</strong>
+      <pre><code>git clone https://github.com/yourusername/osrs-blog.git
+cd osrs-blog
+      </code></pre>
+    </li>
+    <li><strong>Install dependencies:</strong>
+      <pre><code>npm install</code></pre>
+    </li>
+    <li><strong>Configure environment variables:</strong> Create a <code>.env.local</code> file in the root of the project with the following:
+      <pre><code>
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+SANITY_PROJECT_ID=your-sanity-project-id
+SANITY_DATASET=production
+SENTRY_DSN=your-sentry-dsn (optional)
+      </code></pre>
+    </li>
+    <li><strong>Run the development server:</strong>
+      <pre><code>npm run dev</code></pre>
+    </li>
+    <li><strong>Open your browser:</strong> Go to <a href="http://localhost:3000">http://localhost:3000</a> to view the site.</li>
+  </ol>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  <h2>Usage</h2>
+  <p>All content is managed in <strong>Sanity CMS</strong>. Simply log in to your Sanity dashboard to add, update, or remove posts.</p>
