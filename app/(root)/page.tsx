@@ -22,10 +22,10 @@ export default async function Home({
       <section className='pink_container'>
         <h1 className='heading'>
           Old School Runescape, <br />a version of RuneScape that mirrors the
-          game's state as it was in 2007
+          game&apos;s state as it was in 2007
         </h1>
         <p className='sub-heading !max-w-3xl'>
-          Share, read and connect with OSRS players like you!
+          Rune Scimitar - Share, read and connect with OSRS players like you!
         </p>
         <SearchForm query={query} />
       </section>
